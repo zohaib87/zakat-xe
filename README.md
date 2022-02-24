@@ -6,7 +6,7 @@
 ![Repo Size](https://img.shields.io/github/repo-size/XeCreators/zakat-xe.svg)
 [![License](https://img.shields.io/github/license/XeCreators/zakat-xe)](https://github.com/XeCreators/zakat-xe/blob/master/LICENSE.md)
 
-Calculate Zakat in real-time using silver prices through API. Perfect for organizations that are accepting online donations on their websites.
+WordPress plugin to calculate Zakat in real-time using silver prices through API. Perfect for organizations that are accepting online donations on their websites.
 
 ## How To Use
 
