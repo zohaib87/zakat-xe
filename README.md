@@ -8,6 +8,6 @@
 
 Calculate Zakat in real-time using silver prices through API. Perfect for organizations that are accepting online donations on their websites.
 
-## Usage
+## How To Use:
 
 Simply add `[zakat-xe]` shortcode any where you want to display the calculator. 
