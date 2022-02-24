@@ -1,7 +1,10 @@
 # Ignore directories
 node_modules/
+node_scripts/
 .vscode/
 
 # Ignore files
 ftpsync.settings
 sftp-config.json
+package.json
+package-lock.json
