@@ -1,0 +1,6 @@
+{
+  "name": "Zakat XE",
+  "proxy": "wpmu/",
+  "build": "E:/Projects/Zakat Calculator",
+  "local_repo": "E:/Projects/Github/zakat-xe"
+}
