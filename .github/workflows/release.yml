@@ -2,7 +2,7 @@ name: Create Release Zip
 
 on:
   release:
-    types: [published, edited]
+    types: [published]
 
 jobs:
   release-project:
@@ -15,21 +15,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # - name: Download Project
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: zakat-xe
-
-      # - name: View content
-      #   run: ls -R
-
       - uses: actions/checkout@master
       - name: Zip Project
         uses: thedoctor0/zip-release@main
         with:
-          type: 'zip'
-          filename: 'zakat-xe.zip'
-          exclusions: '*.git* /*node_modules/* .editorconfig'
+          type: zip
+          filename: ${{ github.event.repository.name }}.zip
+          exclusions: '*.git* /*node_*/* *.json *.lock *.md'
 
       - name: Upload Archive Release Asset
         uses: actions/upload-release-asset@v1
@@ -37,6 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.latest_release_info.outputs.upload_url }}
-          asset_path: ./zakat-xe.zip
-          asset_name: zakat-xe-${{ steps.latest_release_info.outputs.tag_name }}.zip
+          asset_path: ./${{ github.event.repository.name }}.zip
+          asset_name: ${{ github.event.repository.name }}-${{ steps.latest_release_info.outputs.tag_name }}.zip
           asset_content_type: application/zip
