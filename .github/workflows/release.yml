@@ -1,0 +1,33 @@
+name: Create Release Zip
+
+on:
+  release:
+    types: [published, edited]
+
+jobs:
+  release-project:
+    name: Release Project
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get latest created release info
+        id: latest_release_info
+        uses: jossef/action-latest-release-info@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Zip release
+        uses: thedoctor0/zip-release@main
+        with:
+          type: 'zip'
+          filename: 'zakat-xe.zip'
+          exclusions: '*.git* /*node_modules/* .editorconfig'
+
+      - name: Upload Archive Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.latest_release_info.outputs.upload_url }}
+          asset_path: ./zakat-xe.zip
+          asset_name: zakat-xe-${{ steps.latest_release_info.outputs.tag_name }}.zip
+          asset_content_type: application/zip
