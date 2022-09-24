@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@master
     - name: Archive Release
-      uses: actions/checkout@master
       uses: thedoctor0/zip-release@main
       with:
         type: 'zip'
