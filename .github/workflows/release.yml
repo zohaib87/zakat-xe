@@ -1,0 +1,17 @@
+name: Create Archive
+
+on: 
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Archive Release
+      uses: thedoctor0/zip-release@main
+      with:
+        type: 'zip'
+        filename: 'zakat-xe.zip'
+        exclusions: '*.git* /*node_*/* *.json *.lock *.md'
