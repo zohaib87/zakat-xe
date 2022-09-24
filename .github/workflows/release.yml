@@ -15,14 +15,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Download Project
-        uses: actions/download-artifact@v2
-        with:
-          name: zakat-xe
+      # - name: Download Project
+      #   uses: actions/download-artifact@v2
+      #   with:
+      #     name: zakat-xe
 
-      - name: View content
-        run: ls -R
+      # - name: View content
+      #   run: ls -R
 
+      - uses: actions/checkout@master
       - name: Zip Project
         uses: thedoctor0/zip-release@main
         with:
