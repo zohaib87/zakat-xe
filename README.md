@@ -9,6 +9,8 @@
 
 WordPress plugin to calculate Zakat in real-time using silver prices through API. Perfect for organizations that are accepting online donations on their websites.
 
+[![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-blue?style=for-the-badge)](https://github.com/zohaib87/zakat-xe/releases/latest/download/zakat-xe.zip)
+
 ## How To Use
 
 Simply add `[zakat-xe]` shortcode any where you want to display the calculator.
